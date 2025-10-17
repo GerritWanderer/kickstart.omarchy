@@ -1,33 +1,15 @@
 return {
-	"mrjones2014/smart-splits.nvim",
-	lazy = false,
-	config = function()
-		require("smart-splits").setup()
-
-		-- Navigation keymaps
-		vim.keymap.set(
-			"n",
-			"<C-h>",
-			require("smart-splits").move_cursor_left,
-			{ desc = "Move focus to the left window" }
-		)
-		vim.keymap.set(
-			"n",
-			"<C-j>",
-			require("smart-splits").move_cursor_down,
-			{ desc = "Move focus to the lower window" }
-		)
-		vim.keymap.set(
-			"n",
-			"<C-k>",
-			require("smart-splits").move_cursor_up,
-			{ desc = "Move focus to the upper window" }
-		)
-		vim.keymap.set(
-			"n",
-			"<C-l>",
-			require("smart-splits").move_cursor_right,
-			{ desc = "Move focus to the right window" }
-		)
-	end,
+  "mrjones2014/smart-splits.nvim",
+  build = "./kitty/install-kittens.bash",
+  lazy = false,
+  keys = {
+    -- Override LazyVim's default window navigation
+    { "<C-h>", function() require("smart-splits").move_cursor_left() end, desc = "Move focus to the left window" },
+    { "<C-j>", function() require("smart-splits").move_cursor_down() end, desc = "Move focus to the lower window" },
+    { "<C-k>", function() require("smart-splits").move_cursor_up() end, desc = "Move focus to the upper window" },
+    { "<C-l>", function() require("smart-splits").move_cursor_right() end, desc = "Move focus to the right window" },
+  },
+  config = function()
+    require("smart-splits").setup()
+  end,
 }
