@@ -9,4 +9,5 @@ source ~/.local/share/omarchy/default/bash/rc
 #
 # Make an alias for invoking commands you use constantly
 # alias p='python'
+eval "$(direnv hook bash)"
 export PATH="$HOME/.local/bin:$PATH"
