@@ -1,0 +1,5 @@
+font-family = "MesloLGM Nerd Font Mono"
+font-size = "14.5"
+font-thicken = true
+maximize = true
+config-file = custom
